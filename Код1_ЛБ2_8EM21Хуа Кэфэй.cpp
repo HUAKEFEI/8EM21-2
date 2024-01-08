@@ -228,6 +228,10 @@ int main(int argc, char** argv) {
 	std::string ip_addr = "192.168.0.1";
 	MyRobotino robotino(ip_addr);
 	robotino.connect();
+	
+	//pid: kp, ki, kd, kf, lim_out_h, lim_out_l
+	robotino.set_x_pid(6.0f, 0.2f, 0.0f, 0.3f, -0.3f);
+	robotino.set_y_pid(6.0f, 0.2f, 0.0f, 0.3f, -0.3f);
 	robotino.go_trajectory();
 	robotino.disconnect();
 
